@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f7f3">
+  <meta name="description" content="여행지와 주변 숙소를 둘러보고 편하게 예약하세요.">
+  <title>온트립 — 여행의 다음 장면</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/destination-details.css">
+  <link rel="stylesheet" href="css/ui-state.css">
+  <script type="module" src="js/app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="온트립 홈"><span class="brand-mark">o</span> ontrip</a>
+    <nav class="main-nav"><a href="#destinations">여행지</a><a href="#stays">주변 숙소</a><a href="#about">온트립 이야기</a></nav>
+    <div class="header-actions"><button class="icon-button" id="my-bookings" aria-label="내 예약">♧ <span>내 예약</span></button><button class="button button-outline button-small" id="signup-open">회원가입</button><a class="button button-outline button-small" id="admin-open" href="html/admin.html">관리자</a><button class="button button-dark button-small" id="auth-open">로그인</button><button class="button button-dark button-small" id="logout-button" hidden>로그아웃</button></div>
+  </header>
+  <main id="home">
+    <section class="hero">
+      <div class="hero-copy"><span class="eyebrow"><i></i> FIND YOUR NEXT ESCAPE</span><h1>여행은, 마음이<br>머무는 곳에서.</h1><p>새로운 풍경과 좋은 쉼이 기다리는 곳,<br>온트립에서 다음 여행을 발견해 보세요.</p><a class="button button-dark" href="#destinations">여행지 둘러보기 <span>↗</span></a></div>
+      <div class="hero-art" aria-label="여행 풍경"><div class="sun"></div><div class="ridge ridge-back"></div><div class="ridge ridge-front"></div><div class="hero-caption"><span>01 — 04</span><strong>바람 따라, 제주</strong><span>JEJU ISLAND · KOREA</span></div><span class="art-stamp">TAKE<br>THE<br>SCENIC<br>ROUTE</span></div>
+      <div class="hero-scroll"><span>아래로 스크롤</span><i></i></div>
+    </section>
+    <section class="search-panel" aria-label="여행지 검색"><div class="search-title"><span class="search-icon">⌕</span><div><small>WHERE TO?</small><strong>어디로 떠나볼까요?</strong></div></div><label class="search-field"><span>여행지 검색</span><input id="destination-search" type="search" placeholder="도시 또는 여행지 이름을 입력하세요"></label><button class="button button-accent" id="search-button">여행지 찾기 <span>→</span></button></section>
+    <section class="section destinations-section" id="destinations"><div class="section-heading"><div><span class="eyebrow">PLACES TO GO</span><h2>마음이 향하는 곳</h2><p>이번 여행은 어디에서 시작할까요?</p></div><a class="text-link" href="#stays">숙소도 둘러보기 <span>↗</span></a></div><div class="destination-grid" id="destination-list"><div class="loading-card">여행지를 불러오는 중입니다…</div></div></section>
+    <section class="feature-band" id="about"><div class="feature-photo"><span class="photo-label">SLOW DOWN, LOOK AROUND</span></div><div class="feature-copy"><span class="eyebrow">A LITTLE MORE LOCAL</span><h2>익숙한 하루에서<br>한 걸음 벗어나기</h2><p>동네의 작은 골목부터 바다 앞의 고요한 아침까지. 온트립은 여행지와 그 주변의 좋은 숙소를 한곳에서 소개합니다.</p><a class="text-link" href="#destinations">우리의 여행지 만나기 <span>↗</span></a></div></section>
+    <section class="section stays-section" id="stays"><div class="section-heading"><div><span class="eyebrow">STAY A LITTLE LONGER</span><h2>여행지 근처에서 쉬어가기</h2><p>오늘의 풍경을 오래 간직할 수 있는 숙소.</p></div><div class="stay-controls"><select id="stay-destination"><option value="">모든 여행지</option></select><span class="stay-count" id="stay-count">숙소 둘러보기</span></div></div><div class="stay-grid" id="stay-list"><div class="loading-card">숙소를 불러오는 중입니다…</div></div></section>
+    <section class="newsletter"><div><span class="eyebrow">A NOTE FROM ONTRIP</span><h2>다음 여행을 기다리는 작은 설렘</h2><p>온트립이 고른 여행지 소식을 만나보세요.</p></div><a class="button button-light" href="#destinations">여행 시작하기 <span>↗</span></a></section>
+  </main>
+  <footer class="footer"><a class="brand" href="#home"><span class="brand-mark">o</span> ontrip</a><span>좋은 풍경은 천천히 만나도 괜찮아요.</span><a class="footer-admin" id="footer-admin-open" href="html/admin.html">관리자</a><span>© 2026 ONTRIP</span></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="페이지 맨 위로 이동" title="맨 위로" hidden><span aria-hidden="true">↑</span></button>
+
+  <dialog id="auth-dialog" class="dialog"><button class="dialog-close" data-close aria-label="닫기">×</button><div class="dialog-brand">ontrip</div><span class="eyebrow">WELCOME TO ONTRIP</span><h2 id="auth-title">다시 만나 반가워요</h2><p class="dialog-description" id="auth-description">로그인하고 나만의 여행을 시작해 보세요.</p><form id="auth-form"><label class="form-field auth-name" hidden>회원명<input name="name" autocomplete="name" placeholder="이름을 입력해 주세요"></label><label class="form-field">이메일<input name="email" type="email" autocomplete="email" required placeholder="hello@example.com"></label><label class="form-field auth-phone" hidden>전화번호<input name="phone" type="tel" autocomplete="tel" placeholder="010-0000-0000"></label><label class="form-field">비밀번호<input name="password" type="password" minlength="6" autocomplete="current-password" required placeholder="6자 이상 입력해 주세요"></label><button class="button button-dark dialog-submit" id="auth-submit">로그인 <span>→</span></button></form><button class="switch-auth" id="auth-switch">아직 회원이 아니신가요? <strong>회원가입</strong></button><p class="fine-print">회원님의 정보는 예약 서비스 제공 목적으로 안전하게 관리됩니다.</p></dialog>
+  <dialog id="destination-dialog" class="dialog destination-dialog"><button class="dialog-close" data-close aria-label="닫기">×</button><div id="destination-detail"></div></dialog>
+  <dialog id="booking-dialog" class="dialog"><button class="dialog-close" data-close aria-label="닫기">×</button><div class="dialog-brand">ontrip <span>STAY</span></div><span class="eyebrow">MAKE IT A GETAWAY</span><h2 id="booking-title">숙소 예약</h2><p class="dialog-description" id="booking-subtitle"></p><form id="booking-form"><label class="form-field">예약자명<input name="guestName" required placeholder="예약자 이름"></label><div class="form-row"><label class="form-field">체크인<input name="checkIn" type="date" required></label><label class="form-field">체크아웃<input name="checkOut" type="date" required></label></div><label class="form-field">인원<select name="guests" required></select></label><label class="form-field">연락처<input name="phone" type="tel" required placeholder="010-0000-0000"></label><button type="submit" class="button button-dark dialog-submit">예약 신청하기 <span>→</span></button></form><p class="fine-print">예약 확정은 숙소 확인 후 안내됩니다.</p></dialog>
+  <dialog id="booking-success-dialog" class="dialog booking-success-dialog"><button class="dialog-close" data-close aria-label="닫기">×</button><span class="success-check" aria-hidden="true">✓</span><span class="eyebrow">ONTRIP STAY</span><h2>예약되었습니다.</h2><p class="dialog-description">예약 신청이 접수됐습니다. 예약 상태는 나의 예약에서 확인할 수 있어요.</p><button class="button button-dark dialog-submit" id="success-my-bookings">나의 예약 보기 <span>→</span></button></dialog>
+  <dialog id="bookings-dialog" class="dialog dialog-wide"><button class="dialog-close" data-close aria-label="닫기">×</button><span class="eyebrow">YOUR JOURNEY</span><h2>나의 예약</h2><div id="my-booking-list" class="booking-list"></div></dialog>
+</body>
+</html>
